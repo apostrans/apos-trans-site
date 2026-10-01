@@ -771,7 +771,7 @@
             e.preventDefault();
             
             // TODO: Replace 'YOUR_SERVICE_ID' and 'template_sidebar' with your actual EmailJS IDs
-            emailjs.sendForm('YOUR_SERVICE_ID', 'template_sidebar', '#sidebarForm')
+            emailjs.sendForm('service_hs11ga6', 'Contact Us', '#sidebarForm')
                 .then(function() {
                     showToast('Inquiry sent successfully to Gjorgji Apostolovski!');
                     e.target.reset();
@@ -785,7 +785,7 @@
             e.preventDefault();
             
             // TODO: Replace 'YOUR_SERVICE_ID' and 'template_quote' with your actual EmailJS IDs
-            emailjs.sendForm('YOUR_SERVICE_ID', 'template_quote', '#quoteForm')
+            emailjs.sendForm('service_hs11ga6', 'Contact Us', '#quoteForm')
                 .then(function() {
                     closeQuoteModal();
                     showToast('Quote request submitted successfully!');
