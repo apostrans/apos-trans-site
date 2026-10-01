@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjorgji Apostolovski - English to Macedonian Subtitler</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        proz: {
+                            teal: '#2e6969',
+                            tealDark: '#224e4e',
+                            tealLight: '#3a8787',
+                            darkBg: '#0f172a',
+                            cardBg: '#1e293b',
+                            cardBorder: '#334155',
+                            accent: '#14b8a6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for ProZ icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col selection:bg-teal-500 selection:text-white">
+
+    <!-- apos.com Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <div class="flex items-center space-x-4">
+                <a href="#" class="flex items-center space-x-2 group">
+                    <div class="bg-gradient-to-r from-teal-600 to-teal-500 text-white font-extrabold text-xl px-3 py-1 rounded-lg shadow-md group-hover:scale-105 transition">
+                        apos<span class="text-teal-200">.com</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center space-x-3">
+                <button onclick="openMessageModal()" class="hidden sm:inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3.5 py-1.5 rounded-lg text-sm font-medium transition shadow-sm">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+                <button onclick="openQuoteModal()" class="bg-[#2e6969] hover:bg-[#3a8787] text-white px-4 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-teal-900/20 transition">
+                    <i class="fa-solid fa-file-invoice-dollar mr-1.5"></i> Get Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Profile Top Hero / Banner Card -->
+        <div class="bg-gradient-to-br from-slate-900 via-[#132238] to-[#112330] border border-slate-800 rounded-2xl shadow-xl overflow-hidden mb-8">
+            <div class="h-32 sm:h-44 relative p-6 flex justify-end items-start bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5)), url('1790600349171.jpeg');">
+                <div class="absolute top-4 right-4 flex space-x-2">
+                    <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1 rounded-full font-semibold flex items-center space-x-1.5 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Available</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Profile Identity Section -->
+            <div class="px-6 sm:px-8 pb-8 relative">
+                <div class="flex flex-col md:flex-row items-start md:items-end justify-between -mt-16 sm:-mt-20 mb-6 gap-6">
+                    <div class="flex items-end space-x-5">
+                        <div class="relative group">
+                            <img src="profil.jpeg" alt="Gjorgji Apostolovski" class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover border-4 border-[#0f172a] shadow-2xl bg-slate-800">
+                            <div class="absolute bottom-2 right-2 bg-emerald-500 text-white p-1 rounded-full text-xs border-2 border-[#0f172a]" title="Verified Translator">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <div class="flex items-center space-x-2 flex-wrap">
+                                <h1 class="text-2xl sm:text-3xl font-bold text-white">Gjorgji Apostolovski</h1>
+                            </div>
+                            <p class="text-slate-400 text-sm sm:text-base mt-0.5">English to Macedonian Translator & Subtitler</p>
+                            <div class="flex items-center space-x-4 mt-2 text-xs text-slate-400">
+                                <span class="flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-teal-400"></i> Skopje, North Macedonia</span>
+                                <span class="flex items-center"><i class="fa-solid fa-clock mr-1.5 text-teal-400"></i> GMT+1 (CEST)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                        <button onclick="openQuoteModal()" class="flex-1 md:flex-initial bg-[#2e6969] hover:bg-[#3a8787] text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-teal-900/30 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span>Send Job Offer / Quote</span>
+                        </button>
+                        <button onclick="openMessageModal()" class="flex-1 md:flex-initial bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-4 py-2.5 rounded-xl font-semibold text-sm transition flex items-center justify-center space-x-2">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics & Badges Grid (4 distinct inline blocks) -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <div class="text-xs text-slate-400">Working Languages</div>
+                        <div class="text-xs font-semibold text-slate-200 mt-1 space-y-1">
+                            <div class="flex items-center justify-between"><span>🇬🇧 → 🇲🇰 EN to MK</span><span class="text-teal-400 font-bold">Native</span></div>
+                            <div class="flex items-center justify-between"><span>🇲🇰 → 🇬🇧 MK to EN</span><span class="text-slate-300">Fluent</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <div class="text-xs text-slate-400">Working Pairs</div>
+                        <div class="text-sm font-semibold text-slate-200 mt-0.5">EN → MK, MK → EN</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <div class="text-xs text-slate-400">Subtitling Experience</div>
+                        <div class="text-sm font-semibold text-slate-200 mt-0.5">5+ Years</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div class="text-xs text-slate-400">Social Profiles</div>
+                        <div class="flex items-center space-x-2 mt-1.5">
+                            <a href="https://www.linkedin.com/in/gjorgji-apostolovski-sk35mkd" target="_blank" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-teal-400 flex items-center justify-center text-xs transition border border-slate-700" title="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.proz.com/next/profile/4094627/overview" target="_blank" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-teal-400 flex items-center justify-center text-xs transition border border-slate-700" title="ProZ.com Profile">
+                                <i class="fa-solid fa-p"></i>
+                            </a>
+                            <a href="https://www.facebook.com" target="_blank" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-teal-400 flex items-center justify-center text-xs transition border border-slate-700" title="Facebook Profile">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-teal-400 flex items-center justify-center text-xs transition border border-slate-700" title="Instagram Profile">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="mailto:gjorgji.apostolovski@proton.me" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-teal-600 hover:text-white text-teal-400 flex items-center justify-center text-xs transition border border-slate-700" title="Direct Email">
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Tab Navigation -->
+        <div class="flex border-b border-slate-800 mb-8 overflow-x-auto">
+            <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-teal-500 text-teal-400 whitespace-nowrap transition">
+                Profile Overview
+            </button>
+            <button onclick="switchTab('subtitling')" id="tab-btn-subtitling" class="tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition">
+                Subtitling & Services
+            </button>
+            <button onclick="switchTab('portfolio')" id="tab-btn-portfolio" class="tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition">
+                Tools
+            </button>
+            <button onclick="switchTab('rates')" id="tab-btn-rates" class="tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition">
+                Portfolio/Samples
+            </button>
+            <button onclick="switchTab('cv')" id="tab-btn-cv" class="tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition">
+                CV / Resume
+            </button>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left / Main Column (Tabs Content) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- TAB 1: OVERVIEW -->
+                <div id="tab-overview" class="tab-content space-y-8">
+                    <!-- Bio Card -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
+                        <h2 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fa-solid fa-user-tie text-teal-400 mr-3"></i> Professional Summary
+                        </h2>
+                        <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                Dedicated and meticulous freelance translator and subtitler with over five years of hands-on experience specializing in English to Macedonian localization for Movies & TV content.
+                            </p>
+                            <p>
+                                Making quality assured and culturally resonant localized subtitles. Fully familiar with any subtitle software including Subtitle Workshop, Subtitle Edit, Poliscript, Spot 4 and Ooona.
+                            </p>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-teal-500/10 text-teal-400 p-2.5 rounded-xl border border-teal-500/20 mt-0.5">
+                                    <i class="fa-solid fa-film"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-slate-200 text-sm">VOD & Linear TV Expertise</h3>
+                                    <p class="text-slate-400 text-xs mt-1">Subtitles formatted to clients' strict demands.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-teal-500/10 text-teal-400 p-2.5 rounded-xl border border-teal-500/20 mt-0.5">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-slate-200 text-sm">High Daily Output</h3>
+                                    <p class="text-slate-400 text-xs mt-1">Subtitling 30-45 minutes of video per 8h working day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specializations Card -->
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
+                        <h2 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fa-solid fa-tags text-teal-400 mr-3"></i> Areas of Specialization
+                        </h2>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-800 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-medium">🎬 Film, TV & Streaming</span>
+                            <span class="bg-slate-800 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-medium">📚 Documentaries & Educational</span>
+                            <span class="bg-slate-800 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-medium">🎙️ Transcription & Time-Coded Templates</span>
+                            <span class="bg-slate-800 text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-medium">🧪 Software Localization & UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: SUBTITLING & SERVICES -->
+                <div id="tab-subtitling" class="tab-content hidden space-y-8">
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
+                        <h2 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fa-solid fa-closed-captioning text-teal-400 mr-3"></i> Comprehensive Subtitling Workflow
+                        </h2>
+                        <p class="text-slate-300 text-sm mb-6">
+                            Subtitling is more than literal translation—it's an art of condensation, timing, and linguistic adaptation tailored specifically for Macedonian audiences.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm">1</div>
+                                    <h3 class="font-semibold text-slate-200 text-base">Spotting & Cueing</h3>
+                                </div>
+                                <p class="text-slate-400 text-sm pl-11">
+                                    Precise frame-accurate time-coding following shot changes, speech rhythms, and reading speed thresholds.
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm">2</div>
+                                    <h3 class="font-semibold text-slate-200 text-base">Translation & Localization</h3>
+                                </div>
+                                <p class="text-slate-400 text-sm pl-11">
+                                    Translating idioms, puns, and cultural references into natural-sounding Macedonian while maintaining strict character limits per line (CPL ≤ 37).
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm">3</div>
+                                    <h3 class="font-semibold text-slate-200 text-base">QA & Spellcheck</h3>
+                                </div>
+                                <p class="text-slate-400 text-sm pl-11">
+                                    Automated and manual checks for overlap errors, duration limits, line breaks, CPS, and grammar correctness in Macedonian orthography.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: TOOLS -->
+                <div id="tab-portfolio" class="tab-content hidden space-y-8">
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
+                        <h2 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <i class="fa-solid fa-toolbox text-teal-400 mr-3"></i> Software & Tools
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700 flex items-center space-x-4">
+                                <div class="text-3xl text-teal-400"><i class="fa-solid fa-desktop"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-200 text-sm">Subtitle Workshop & Subtitle Edit</h4>
+                                    <p class="text-xs text-slate-400">Professional time-coding, format conversion and audio alignments.</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700 flex items-center space-x-4">
+                                <div class="text-3xl text-teal-400"><i class="fa-solid fa-code"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-200 text-sm">Ooona, Poliscript, Spot 4</h4>
+                                    <p class="text-xs text-slate-400">Familiar with most company-provided online and offline platforms.</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700 flex items-center space-x-4">
+                                <div class="text-3xl text-teal-400"><i class="fa-solid fa-language"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-slate-200 text-sm">MS Word and Excel</h4>
+                                    <p class="text-xs text-slate-400">For script translation & glossaries</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: PORTFOLIO / SAMPLES (Video Holder + Translating Samples Text Holder) -->
+                <div id="tab-rates" class="tab-content hidden space-y-8">
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <h2 class="text-xl font-bold text-white flex items-center">
+                                    <i class="fa-solid fa-video text-teal-400 mr-3"></i> Subtitling Video Samples & Portfolio
+                                </h2>
+                                <p class="text-slate-400 text-xs mt-1">Preview sample Macedonian subtitled video clips.</p>
+                            </div>
+                            <!-- Sample Selector Buttons -->
+                            <div class="flex items-center space-x-2 bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs">
+                                <button onclick="selectVideo(0)" id="vid-btn-0" class="px-3 py-1.5 rounded-lg font-medium bg-teal-600 text-white transition">Short Movie</button>
+                                <button onclick="selectVideo(1)" id="vid-btn-1" class="px-3 py-1.5 rounded-lg font-medium text-slate-300 hover:text-white transition">Documentary</button>
+                                <button onclick="selectVideo(2)" id="vid-btn-2" class="px-3 py-1.5 rounded-lg font-medium text-slate-300 hover:text-white transition">AI Dubbing</button>
+                            </div>
+                        </div>
+
+                        <!-- Video Player Holder Container -->
+                        <div class="space-y-4 mb-8">
+                            <div class="relative w-full aspect-video bg-black rounded-2xl overflow-hidden border border-slate-800 shadow-2xl flex items-center justify-center group">
+                                <iframe id="activeVideoFrame" class="w-full h-full" src="https://www.youtube.com/embed/Z_wtV86iy6Q" title="Generation Experimental AI Animation on the Human Experience" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <!-- Custom Subtitle Overlay Mockup Indicator -->
+                                <div class="absolute bottom-6 left-0 right-0 flex justify-center pointer-events-none px-4">
+                                    <div id="activeSubtitleText" class="bg-black/80 text-white text-sm sm:text-base px-4 py-1.5 rounded-lg font-medium text-center tracking-wide border border-white/10 shadow-lg backdrop-blur-sm">
+                                        [Македонски титлови за краток филм]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Details Card -->
+                            <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                    <h3 id="videoTitle" class="font-bold text-white text-base">Short movie (EN → MK)</h3>
+                                    <span id="videoCategoryBadge" class="bg-teal-500/10 text-teal-400 text-xs px-2.5 py-1 rounded-md font-semibold border border-teal-500/20 w-fit">Short Movie</span>
+                                </div>
+                                <p id="videoDescription" class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                                    Full English to Macedonian translation, spotting, and line-break optimization.
+                                </p>
+                                <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-3 border-t border-slate-700/60">
+                                    <span class="flex items-center"><i class="fa-solid fa-code-branch mr-1.5 text-teal-400"></i> Format: SRT / WebVTT</span>
+                                    <span class="flex items-center"><i class="fa-solid fa-stopwatch mr-1.5 text-teal-400"></i> Character Limit: ≤ 37 CPL</span>
+                                    <span class="flex items-center"><i class="fa-solid fa-check-circle mr-1.5 text-teal-400"></i> 100% Quality Checked</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Side-by-Side Translating Samples Text Holder with 3 Distinct Comparison Cards & Show/Hide Buttons -->
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-base font-bold text-white flex items-center">
+                                    <i class="fa-solid fa-file-lines text-teal-400 mr-2.5"></i> Translation Comparison Cards (EN ⇄ MK)
+                                </h3>
+                                <span class="bg-teal-500/10 text-teal-400 text-[10px] px-2 py-0.5 rounded font-mono border border-teal-500/20">Samples Extracts</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-4">
+                                Expand or collapse the translation fields for each sample extract below to review source-to-target phrasing.
+                            </p>
+
+                            <!-- ================= CARD 1 ================= -->
+                            <div class="bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 transition-all">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-6 h-6 rounded-md bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs">1</span>
+                                        <h4 class="text-xs sm:text-sm font-semibold text-slate-200">Sample Extract: Film Localization & Media Dubs</h4>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <a href="https://drive.google.com/file/d/1XkNLTR-z_lp682p0Oc7T74fHyJyr4kYZ/view?usp=sharing" target="_blank" class="text-xs bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5 shadow-sm" title="Download Full Sample 1 PDF">
+                                            <i class="fa-solid fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <button onclick="toggleTranslation('field-1', 'btn-text-1')" id="btn-text-1" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5">
+                                            <i class="fa-solid fa-eye"></i>
+                                            <span>Show Translation</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="field-1" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
+                                    <!-- English Source Segment -->
+                                    <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
+                                            <span>🇬🇧 English Source (Original)</span>
+                                        </div>
+                                        <p class="text-slate-200 text-sm font-medium">
+                                            Some dub localizations are quite popular in their own right, with even a handful of greatly altered titles proving equally if not more popular than the original. Several examples include some of ADV's comedy dubs, especially the "alternate", dub for Super Milk-chan and the (admittedly still quite controversial) English dub for Ghost Stories, which contrary to the nature of the original show, was adult in nature and primarily a work of parody, and thus proved popular with a very different audience from the original children's series.
+                                        </p>
+                                    </div>
+                                    <!-- Macedonian Target Translation Segment -->
+                                    <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
+                                            <span>🇲🇰 Macedonian Translation</span>
+                                        </div>
+                                        <p class="text-teal-100 text-sm font-semibold">
+                                            Некои дублажи (гласовна локализација) се доста популарни сами по себе со мноштво одлични алтернативни наслови кои се подеднакво, ако не и попопуларни од оригиналните. Неколку примери за тоа се дублажите за комедии од компанијата „АДВ“, особено „алтернативниот“ дублаж за „Супер Милк Чан“ и (општо познатиот и сѐ уште контроверзен) дублаж на англиски јазик за „Гоуст Сторис“, којшто спротивно на природата на оригиналната серија беше направен за возрасни и пред сѐ како пародија и затоа стана популарен кај многу поинаква публика од оригиналната детска серија.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ================= CARD 2 ================= -->
+                            <div class="bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 transition-all">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-6 h-6 rounded-md bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs">2</span>
+                                        <h4 class="text-xs sm:text-sm font-semibold text-slate-200">Sample Extract: Hollywood</h4>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <a href="https://drive.google.com/file/d/1XduIBwQRql4QjrzxiDLyu41tBfwqTnPw/view?usp=sharing" target="_blank" class="text-xs bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5 shadow-sm" title="Download Full Sample 2 PDF">
+                                            <i class="fa-solid fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <button onclick="toggleTranslation('field-2', 'btn-text-2')" id="btn-text-2" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5">
+                                            <i class="fa-solid fa-eye"></i>
+                                            <span>Show Translation</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="field-2" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
+                                    <!-- English Source Segment -->
+                                    <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
+                                            <span>🇬🇧 English Source (Original)</span>
+                                        </div>
+                                        <p class="text-slate-200 text-sm font-medium">
+                                            Hollywood is the oldest film industry in the world which was originated 121 years ago. The earliest documented account of an exhibition of projected motion pictures in the United States was in June 1894 in Richmond, Indiana by Charles Francis Jenkins. The first movie studio in the Hollywood area, Nestor Studios, was founded in 1911 by Al Christie for David Horsley in an old building on the northwest corner of Sunset Boulevard and Gower Street.
+                                        </p>
+                                    </div>
+                                    <!-- Macedonian Target Translation Segment -->
+                                    <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
+                                            <span>🇲🇰 Macedonian Translation</span>
+                                        </div>
+                                        <p class="text-teal-100 text-sm font-semibold">
+                                            Холивуд е најстарата филмска индустрија во светот, настаната пред 121 година. Најраната документирана сметка за прикажување на проекција на подвижни слики во САД е од јуни, 1894 год во Ричмонд, во Индијана, издадена од страна на Чарлс Френсис Џенкинс. Првото филмско студио во областа на Холивуд - „Нестор Студиос“ е основано во 1911 год од Ал Кристи за Дејвид Хорсли во стара зграда на северозападниот агол на булеварот Сансет и улицата Гувер.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ================= CARD 3 ================= -->
+                            <div class="bg-slate-800/40 border border-slate-700/60 rounded-xl p-4 transition-all">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-6 h-6 rounded-md bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xs">3</span>
+                                        <h4 class="text-xs sm:text-sm font-semibold text-slate-200">Sample Extract: Post-production</h4>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <a href="https://drive.google.com/file/d/1gPbddzoCrsM98914Mz8qtBD-0xuv7BYZ/view?usp=sharing" target="_blank" class="text-xs bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5 shadow-sm" title="Download Full Sample 3 PDF">
+                                            <i class="fa-solid fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <button onclick="toggleTranslation('field-3', 'btn-text-3')" id="btn-text-3" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3 py-1 rounded-lg font-medium transition flex items-center space-x-1.5">
+                                            <i class="fa-solid fa-eye"></i>
+                                            <span>Show Translation</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="field-3" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
+                                    <!-- English Source Segment -->
+                                    <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
+                                            <span>🇬🇧 English Source (Original)</span>
+                                        </div>
+                                        <p class="text-slate-200 text-sm font-medium">
+                                            Post-production is many different processes grouped under one name. These typically include video editing the picture of a television program using an edit decision list (EDL), writing, (re)recording, and editing the soundtrack, adding visual special effects - mainly computer-generated imagery (CGI) and digital copy from which release prints will be made.
+                                        </p>
+                                    </div>
+                                    <!-- Macedonian Target Translation Segment -->
+                                    <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
+                                        <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
+                                            <span>🇲🇰 Macedonian Translation</span>
+                                        </div>
+                                        <p class="text-teal-100 text-sm font-semibold">
+                                            Пост-продукција се разни процеси групирани под едно име. А тоа се: видео уредување на слика на една телевизиска програма со користење на Листа со одлуки за уредување (EDL), пишување, (пре)снимање и уредување на тонски запис, додавање специјални визуелни ефекти - главно компјутерски генерирани слики (CGI) и правење дигитална копија од која се прават филмски ленти.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NEW BLOCK: Software Localization & UI Sample Download -->
+                        <div class="bg-slate-900/95 border border-teal-500/30 rounded-2xl p-6 shadow-xl space-y-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-base font-bold text-white flex items-center">
+                                    <i class="fa-solid fa-laptop-code text-teal-400 mr-2.5"></i> Software Localization & UI Sample
+                                </h3>
+                                <span class="bg-teal-500/10 text-teal-400 text-[10px] px-2.5 py-0.5 rounded font-mono border border-teal-500/20">Download</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                Review a volunteer localization string bundle (XML) format for Subtitle Edit v.4.0.13.
+                            </p>
+                            
+                            <div class="flex flex-col sm:flex-row items-center justify-between bg-slate-800/80 border border-slate-700/80 rounded-xl p-4 gap-4">
+                                <div class="flex items-center space-x-3.5 w-full sm:w-auto">
+                                    <div class="w-11 h-11 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl flex-shrink-0 border border-teal-500/30">
+                                        <i class="fa-solid fa-file-arrow-down"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-100 text-sm">Macedonian_SE_4.0.13_Localization.xml</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">mk-MK.XML • EN to MK • 275 KB</p>
+                                    </div>
+                                </div>
+                                <a href="https://drive.google.com/uc?export=download&id=1v3LtX_1ILAkkQaaO2bO3YX63F43MXmAg" download="Macedonian_UI_Localization_Sample.json" class="w-full sm:w-auto bg-[#2e6969] hover:bg-[#3a8787] text-white px-5 py-2.5 rounded-xl text-xs font-semibold shadow-lg shadow-teal-900/30 transition flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- TAB 5: CV / RESUME -->
+                <div id="tab-cv" class="tab-content hidden space-y-8">
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+                            <div>
+                                <h2 class="text-xl font-bold text-white flex items-center">
+                                    <i class="fa-solid fa-file-pdf text-teal-400 mr-3"></i> Curriculum Vitae (CV)
+                                </h2>
+                                <p class="text-slate-400 text-xs mt-1">Professional background, work history, and qualifications.</p>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1nqXVkIQGqTJyocAkTPiAixYnaRVUmw54/view?usp=sharing" download="Gjorgji_Apostolovski_CV.pdf" class="bg-[#2e6969] hover:bg-[#3a8787] text-white px-5 py-2.5 rounded-xl text-xs font-semibold shadow-lg shadow-teal-900/30 transition flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download CV (PDF)</span>
+                            </a>
+                        </div>
+
+                        <!-- CV Summary Preview -->
+                        <div class="space-y-6 text-slate-300 text-sm">
+                            <div>
+                                <h3 class="text-base font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-briefcase text-teal-400 mr-2"></i> Professional Experience
+                                </h3>
+                                <div class="space-y-4">
+                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                        <div class="flex justify-between items-start mb-1">
+                                            <h4 class="font-semibold text-white">Freelance English to Macedonian Subtitler & Translator</h4>
+                                            <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2019 - Present</span>
+                                        </div>
+                                        <p class="text-xs text-slate-400 mb-2">Self-employed • Skopje, North Macedonia</p>
+                                        <p class="text-xs text-slate-300 leading-relaxed">
+                                            Specializing in EN-MK subtitling, spotting, and quality assurance for VOD platforms, independent films, and documentaries. Handling 30-45 minutes of video daily with strict adherence to character limits and reading speeds.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-base font-bold text-white mb-3 flex items-center">
+                                    <i class="fa-solid fa-graduation-cap text-teal-400 mr-2"></i> Education & Certifications
+                                </h3>
+                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4 class="font-semibold text-white">English Courses C1</h4>
+                                        <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2000 - 2004</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400">Rabotnicki Univerzitet "Koco Racin", Skopje</p>
+                                </div>
+                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4 class="font-semibold text-white">Economics assistant</h4>
+                                        <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2004 - 2008</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400">Highschool of Law and Business "Vasil Antevski-Dren", Skopje</p>
+                                </div>
+                                <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4 class="font-semibold text-white">Bachelor's Degree in Agricultural Sciences</h4>
+                                        <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2008 - 2015</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400">University of Ss. Cyril and Methodius, Skopje</p>
+                                </div>
+                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h4 class="font-semibold text-white">Microsoft Office 2013 Courses</h4>
+                                        <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2013</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400">Qinshift Academy Seavus, Skopje</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar Column -->
+            <div class="space-y-6">
+                <!-- Quick Contact Card -->
+                <div class="bg-gradient-to-b from-slate-900 to-[#132238] border border-slate-800 rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center">
+                        <i class="fa-solid fa-paper-plane text-teal-400 mr-2.5"></i> Quick Quote / Direct Hire
+                    </h3>
+                    <p class="text-slate-300 text-xs mb-4">
+                        Need an English to Macedonian subtitler for your upcoming video project? Reach out directly.
+                    </p>
+                    <form onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Your Name / Agency</label>
+                            <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="e.g. John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
+                            <input type="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="smith@agency.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Project Details & Duration</label>
+                            <textarea rows="3" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Video length, turnaround time..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#2e6969] hover:bg-[#3a8787] text-white py-2.5 rounded-lg font-semibold text-sm shadow-md transition flex items-center justify-center space-x-2">
+                            <span>Send Inquiry</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0f19] border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>© 2026 apos.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Quote / Message Modal Popup -->
+    <div id="quoteModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeQuoteModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-xl font-bold text-white mb-2 flex items-center">
+                <i class="fa-solid fa-file-invoice-dollar text-teal-400 mr-2.5"></i> Request a Subtitling Quote
+            </h3>
+            <p class="text-slate-400 text-xs mb-6">Fill out your project requirements below to get a prompt response from Gjorgji Apostolovski.</p>
+            
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                        <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="Full name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Email</label>
+                        <input type="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="name@company.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Service Required</label>
+                    <select class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500">
+                        <option>English to Macedonian Subtitling & Spotting</option>
+                        <option>Translation from Pre-spotted Template</option>
+                        <option>Subtitle QA & Proofreading</option>
+                        <option>Transcription & Time-coding</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Project Details (Duration, Deadline)</label>
+                    <textarea rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Provide video length, subject matter, and delivery deadline..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#2e6969] hover:bg-[#3a8787] text-white py-3 rounded-xl font-semibold text-sm shadow-lg shadow-teal-900/30 transition">
+                    Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <div>
+            <div class="font-semibold text-sm">Success!</div>
+            <div class="text-xs text-emerald-100" id="toastMessage">Your message has been sent successfully.</div>
+        </div>
+    </div>
+
+    <script>
+        // Clean standard youtube embed URLs (avoiding -nocookie domain quirks that trigger error 153)
+        const portfolioVideos = [
+            {
+                title: "Short movie (EN → MK)",
+                category: "Short Movie",
+                description: "Full English to Macedonian translation, spotting, and line-break optimization tailored for streaming platform requirements (Netflix/Amazon guidelines compliant).",
+                url: "https://www.youtube.com/embed/Z_wtV86iy6Q",
+                subtitle: "[Македонски титлови за краток филм]"
+            },
+            {
+                title: "Historical Documentary Subtitling",
+                category: "Documentary Series",
+                description: "Complex terminology localization for an educational historical series focusing on Balkan heritage and cultural architecture.",
+                url: "https://www.youtube.com/embed/jNQXAC9IVRw",
+                subtitle: "[ Документарна серија: Традиција врежана во вековите. ]"
+            },
+            {
+                title: "AI Dubbing (EN → MK)",
+                category: "Kids cartons",
+                description: "English to Macedonian AI Dubbing made with free AI tools.",
+                url: "https://www.youtube.com/embed/WQCdNSZZYDU",
+                subtitle: "[ Гласовна локализација (Dub) направена со AI]"
+            }
+        ];
+
+        function selectVideo(index) {
+            const vid = portfolioVideos[index];
+            document.getElementById('activeVideoFrame').src = vid.url;
+            document.getElementById('videoTitle').innerText = vid.title;
+            document.getElementById('videoCategoryBadge').innerText = vid.category;
+            document.getElementById('videoDescription').innerText = vid.description;
+            document.getElementById('activeSubtitleText').innerText = vid.subtitle;
+
+            // Update button styles
+            for (let i = 0; i < 3; i++) {
+                const btn = document.getElementById('vid-btn-' + i);
+                if (i === index) {
+                    btn.classList.add('bg-teal-600', 'text-white');
+                    btn.classList.remove('text-slate-300');
+                } else {
+                    btn.classList.remove('bg-teal-600', 'text-white');
+                    btn.classList.add('text-slate-300');
+                }
+            }
+        }
+
+        // Toggle Translation Fields Function
+        function toggleTranslation(fieldId, btnId) {
+            const field = document.getElementById(fieldId);
+            const btn = document.getElementById(btnId);
+
+            if (field.classList.contains('hidden')) {
+                field.classList.remove('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i><span>Hide Translation</span>`;
+            } else {
+                field.classList.add('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-eye"></i><span>Show Translation</span>`;
+            }
+        }
+
+        // Tab switching logic
+        function switchTab(tabId) {
+            const tabs = ['overview', 'subtitling', 'portfolio', 'rates', 'cv'];
+            tabs.forEach(t => {
+                const content = document.getElementById('tab-' + t);
+                const btn = document.getElementById('tab-btn-' + t);
+                if (t === tabId) {
+                    content.classList.remove('hidden');
+                    btn.classList.add('border-teal-500', 'text-teal-400');
+                    btn.classList.remove('border-transparent', 'text-slate-400');
+                } else {
+                    content.classList.add('hidden');
+                    btn.classList.remove('border-teal-500', 'text-teal-400');
+                    btn.classList.add('border-transparent', 'text-slate-400');
+                }
+            });
+        }
+
+        // Modal triggers
+        function openQuoteModal() {
+            document.getElementById('quoteModal').classList.remove('hidden');
+            document.getElementById('quoteModal').classList.add('flex');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quoteModal').classList.add('hidden');
+            document.getElementById('quoteModal').classList.remove('flex');
+        }
+
+        function openMessageModal() {
+            openQuoteModal();
+        }
+
+        // Form handlers with custom toast notification
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            showToast('Inquiry sent successfully to Gjorgji Apostolovski!');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeQuoteModal();
+            showToast('Quote request submitted successfully!');
+            e.target.reset();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
