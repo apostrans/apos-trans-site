@@ -330,7 +330,6 @@
                                 <!-- Custom Subtitle Overlay Mockup Indicator -->
                                 <div class="absolute bottom-6 left-0 right-0 flex justify-center pointer-events-none px-4">
                                     <div id="activeSubtitleText" class="bg-black/80 text-white text-sm sm:text-base px-4 py-1.5 rounded-lg font-medium text-center tracking-wide border border-white/10 shadow-lg backdrop-blur-sm">
-                                        [Македонски титлови за краток филм]
                                     </div>
                                 </div>
                             </div>
@@ -771,7 +770,7 @@
             e.preventDefault();
             
             // TODO: Replace 'YOUR_SERVICE_ID' and 'template_sidebar' with your actual EmailJS IDs
-            emailjs.sendForm('service_hs11ga6', 'Contact Us', '#sidebarForm')
+            emailjs.sendForm('service_hs11ga6', 'template_hqxfgzo', '#sidebarForm')
                 .then(function() {
                     showToast('Inquiry sent successfully to Gjorgji Apostolovski!');
                     e.target.reset();
@@ -785,7 +784,7 @@
             e.preventDefault();
             
             // TODO: Replace 'YOUR_SERVICE_ID' and 'template_quote' with your actual EmailJS IDs
-            emailjs.sendForm('service_hs11ga6', 'Contact Us', '#quoteForm')
+            emailjs.sendForm('service_hs11ga6', 'template_hqxfgzo', '#quoteForm')
                 .then(function() {
                     closeQuoteModal();
                     showToast('Quote request submitted successfully!');
