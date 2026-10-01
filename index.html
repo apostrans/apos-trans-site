@@ -33,6 +33,15 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "GZTtDwFkYh0QnfaQE",
+          });
+       })();
+    </script>
 </head>
 <body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col selection:bg-teal-500 selection:text-white">
 
@@ -43,7 +52,7 @@
             <div class="flex items-center space-x-4">
                 <a href="#" class="flex items-center space-x-2 group">
                     <div class="bg-gradient-to-r from-teal-600 to-teal-500 text-white font-extrabold text-xl px-3 py-1 rounded-lg shadow-md group-hover:scale-105 transition">
-                        apos<span class="text-teal-200">.com</span>
+                        apostrans<span class="text-teal-200">.github.io</span>
                     </div>
                 </a>
             </div>
@@ -53,9 +62,6 @@
                 <button onclick="openMessageModal()" class="hidden sm:inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3.5 py-1.5 rounded-lg text-sm font-medium transition shadow-sm">
                     <i class="fa-regular fa-envelope"></i>
                     <span>Contact</span>
-                </button>
-                <button onclick="openQuoteModal()" class="bg-[#2e6969] hover:bg-[#3a8787] text-white px-4 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-teal-900/20 transition">
-                    <i class="fa-solid fa-file-invoice-dollar mr-1.5"></i> Get Quote
                 </button>
             </div>
         </div>
@@ -102,14 +108,10 @@
                             <i class="fa-solid fa-handshake"></i>
                             <span>Send Job Offer / Quote</span>
                         </button>
-                        <button onclick="openMessageModal()" class="flex-1 md:flex-initial bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-4 py-2.5 rounded-xl font-semibold text-sm transition flex items-center justify-center space-x-2">
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>Send Message</span>
-                        </button>
                     </div>
                 </div>
 
-                <!-- Key Metrics & Badges Grid (4 distinct inline blocks) -->
+                <!-- Key Metrics & Badges Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800/80">
                     <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
                         <div class="text-xs text-slate-400">Working Languages</div>
@@ -303,7 +305,7 @@
                     </div>
                 </div>
 
-                <!-- TAB 4: PORTFOLIO / SAMPLES (Video Holder + Translating Samples Text Holder) -->
+                <!-- TAB 4: PORTFOLIO / SAMPLES -->
                 <div id="tab-rates" class="tab-content hidden space-y-8">
                     <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-md">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
@@ -350,7 +352,7 @@
                             </div>
                         </div>
 
-                        <!-- Side-by-Side Translating Samples Text Holder with 3 Distinct Comparison Cards & Show/Hide Buttons -->
+                        <!-- Side-by-Side Translating Samples Text Holder -->
                         <div class="space-y-6 mb-8">
                             <div class="flex items-center justify-between mb-2">
                                 <h3 class="text-base font-bold text-white flex items-center">
@@ -381,7 +383,6 @@
                                     </div>
                                 </div>
                                 <div id="field-1" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
-                                    <!-- English Source Segment -->
                                     <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
                                             <span>🇬🇧 English Source (Original)</span>
@@ -390,7 +391,6 @@
                                             Some dub localizations are quite popular in their own right, with even a handful of greatly altered titles proving equally if not more popular than the original. Several examples include some of ADV's comedy dubs, especially the "alternate", dub for Super Milk-chan and the (admittedly still quite controversial) English dub for Ghost Stories, which contrary to the nature of the original show, was adult in nature and primarily a work of parody, and thus proved popular with a very different audience from the original children's series.
                                         </p>
                                     </div>
-                                    <!-- Macedonian Target Translation Segment -->
                                     <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
                                             <span>🇲🇰 Macedonian Translation</span>
@@ -421,7 +421,6 @@
                                     </div>
                                 </div>
                                 <div id="field-2" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
-                                    <!-- English Source Segment -->
                                     <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
                                             <span>🇬🇧 English Source (Original)</span>
@@ -430,7 +429,6 @@
                                             Hollywood is the oldest film industry in the world which was originated 121 years ago. The earliest documented account of an exhibition of projected motion pictures in the United States was in June 1894 in Richmond, Indiana by Charles Francis Jenkins. The first movie studio in the Hollywood area, Nestor Studios, was founded in 1911 by Al Christie for David Horsley in an old building on the northwest corner of Sunset Boulevard and Gower Street.
                                         </p>
                                     </div>
-                                    <!-- Macedonian Target Translation Segment -->
                                     <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
                                             <span>🇲🇰 Macedonian Translation</span>
@@ -461,7 +459,6 @@
                                     </div>
                                 </div>
                                 <div id="field-3" class="hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 transition-all">
-                                    <!-- English Source Segment -->
                                     <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-mono border-b border-slate-700/50 pb-1.5">
                                             <span>🇬🇧 English Source (Original)</span>
@@ -470,7 +467,6 @@
                                             Post-production is many different processes grouped under one name. These typically include video editing the picture of a television program using an edit decision list (EDL), writing, (re)recording, and editing the soundtrack, adding visual special effects - mainly computer-generated imagery (CGI) and digital copy from which release prints will be made.
                                         </p>
                                     </div>
-                                    <!-- Macedonian Target Translation Segment -->
                                     <div class="bg-teal-950/20 border border-teal-500/30 rounded-xl p-4">
                                         <div class="flex items-center justify-between text-xs text-teal-300 mb-2 font-mono border-b border-teal-500/20 pb-1.5">
                                             <span>🇲🇰 Macedonian Translation</span>
@@ -483,7 +479,7 @@
                             </div>
                         </div>
 
-                        <!-- NEW BLOCK: Software Localization & UI Sample Download -->
+                        <!-- Software Localization & UI Sample Download -->
                         <div class="bg-slate-900/95 border border-teal-500/30 rounded-2xl p-6 shadow-xl space-y-4">
                             <div class="flex items-center justify-between mb-2">
                                 <h3 class="text-base font-bold text-white flex items-center">
@@ -555,14 +551,14 @@
                                 <h3 class="text-base font-bold text-white mb-3 flex items-center">
                                     <i class="fa-solid fa-graduation-cap text-teal-400 mr-2"></i> Education & Certifications
                                 </h3>
-                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
                                     <div class="flex justify-between items-start mb-1">
                                         <h4 class="font-semibold text-white">English Courses C1</h4>
                                         <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2000 - 2004</span>
                                     </div>
                                     <p class="text-xs text-slate-400">Rabotnicki Univerzitet "Koco Racin", Skopje</p>
                                 </div>
-                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
                                     <div class="flex justify-between items-start mb-1">
                                         <h4 class="font-semibold text-white">Economics assistant</h4>
                                         <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2004 - 2008</span>
@@ -576,7 +572,7 @@
                                     </div>
                                     <p class="text-xs text-slate-400">University of Ss. Cyril and Methodius, Skopje</p>
                                 </div>
-                                    <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
+                                <div class="bg-slate-800/50 border border-slate-700/60 p-4 rounded-xl">
                                     <div class="flex justify-between items-start mb-1">
                                         <h4 class="font-semibold text-white">Microsoft Office 2013 Courses</h4>
                                         <span class="text-xs text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">2013</span>
@@ -592,7 +588,7 @@
 
             <!-- Right Sidebar Column -->
             <div class="space-y-6">
-                <!-- Quick Contact Card -->
+                <!-- Quick Contact Card with EmailJS form ID -->
                 <div class="bg-gradient-to-b from-slate-900 to-[#132238] border border-slate-800 rounded-2xl p-6 shadow-xl">
                     <h3 class="text-lg font-bold text-white mb-4 flex items-center">
                         <i class="fa-solid fa-paper-plane text-teal-400 mr-2.5"></i> Quick Quote / Direct Hire
@@ -600,18 +596,18 @@
                     <p class="text-slate-300 text-xs mb-4">
                         Need an English to Macedonian subtitler for your upcoming video project? Reach out directly.
                     </p>
-                    <form onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                    <form id="sidebarForm" onsubmit="handleQuickSubmit(event)" class="space-y-4">
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Your Name / Agency</label>
-                            <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="e.g. John Smith">
+                            <input type="text" name="user_name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="e.g. John Smith">
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
-                            <input type="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="smith@agency.com">
+                            <input type="email" name="user_email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="smith@agency.com">
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Project Details & Duration</label>
-                            <textarea rows="3" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Video length, turnaround time..."></textarea>
+                            <textarea rows="3" name="message" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Video length, turnaround time..."></textarea>
                         </div>
                         <button type="submit" class="w-full bg-[#2e6969] hover:bg-[#3a8787] text-white py-2.5 rounded-lg font-semibold text-sm shadow-md transition flex items-center justify-center space-x-2">
                             <span>Send Inquiry</span>
@@ -641,20 +637,20 @@
             </h3>
             <p class="text-slate-400 text-xs mb-6">Fill out your project requirements below to get a prompt response from Gjorgji Apostolovski.</p>
             
-            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+            <form id="quoteForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
-                        <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="Full name">
+                        <input type="text" name="user_name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="Full name">
                     </div>
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-1">Email</label>
-                        <input type="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="name@company.com">
+                        <input type="email" name="user_email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500" placeholder="name@company.com">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-medium text-slate-300 mb-1">Service Required</label>
-                    <select class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500">
+                    <select name="service" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500">
                         <option>English to Macedonian Subtitling & Spotting</option>
                         <option>Translation from Pre-spotted Template</option>
                         <option>Subtitle QA & Proofreading</option>
@@ -663,7 +659,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-medium text-slate-300 mb-1">Project Details (Duration, Deadline)</label>
-                    <textarea rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Provide video length, subject matter, and delivery deadline..."></textarea>
+                    <textarea rows="4" name="message" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 resize-none" placeholder="Provide video length, subject matter, and delivery deadline..."></textarea>
                 </div>
                 <button type="submit" class="w-full bg-[#2e6969] hover:bg-[#3a8787] text-white py-3 rounded-xl font-semibold text-sm shadow-lg shadow-teal-900/30 transition">
                     Submit Quote Request
@@ -682,7 +678,6 @@
     </div>
 
     <script>
-        // Clean standard youtube embed URLs (avoiding -nocookie domain quirks that trigger error 153)
         const portfolioVideos = [
             {
                 title: "Short movie (EN → MK)",
@@ -715,7 +710,6 @@
             document.getElementById('videoDescription').innerText = vid.description;
             document.getElementById('activeSubtitleText').innerText = vid.subtitle;
 
-            // Update button styles
             for (let i = 0; i < 3; i++) {
                 const btn = document.getElementById('vid-btn-' + i);
                 if (i === index) {
@@ -728,7 +722,6 @@
             }
         }
 
-        // Toggle Translation Fields Function
         function toggleTranslation(fieldId, btnId) {
             const field = document.getElementById(fieldId);
             const btn = document.getElementById(btnId);
@@ -742,7 +735,6 @@
             }
         }
 
-        // Tab switching logic
         function switchTab(tabId) {
             const tabs = ['overview', 'subtitling', 'portfolio', 'rates', 'cv'];
             tabs.forEach(t => {
@@ -760,7 +752,6 @@
             });
         }
 
-        // Modal triggers
         function openQuoteModal() {
             document.getElementById('quoteModal').classList.remove('hidden');
             document.getElementById('quoteModal').classList.add('flex');
@@ -775,18 +766,34 @@
             openQuoteModal();
         }
 
-        // Form handlers with custom toast notification
+        // Real EmailJS Submissions
         function handleQuickSubmit(e) {
             e.preventDefault();
-            showToast('Inquiry sent successfully to Gjorgji Apostolovski!');
-            e.target.reset();
+            
+            // TODO: Replace 'YOUR_SERVICE_ID' and 'template_sidebar' with your actual EmailJS IDs
+            emailjs.sendForm('YOUR_SERVICE_ID', 'template_sidebar', '#sidebarForm')
+                .then(function() {
+                    showToast('Inquiry sent successfully to Gjorgji Apostolovski!');
+                    e.target.reset();
+                }, function(error) {
+                    showToast('Failed to send message. Please try again.');
+                    console.log('FAILED...', error);
+                });
         }
 
         function handleModalSubmit(e) {
             e.preventDefault();
-            closeQuoteModal();
-            showToast('Quote request submitted successfully!');
-            e.target.reset();
+            
+            // TODO: Replace 'YOUR_SERVICE_ID' and 'template_quote' with your actual EmailJS IDs
+            emailjs.sendForm('YOUR_SERVICE_ID', 'template_quote', '#quoteForm')
+                .then(function() {
+                    closeQuoteModal();
+                    showToast('Quote request submitted successfully!');
+                    e.target.reset();
+                }, function(error) {
+                    showToast('Failed to send quote request. Please try again.');
+                    console.log('FAILED...', error);
+                });
         }
 
         function showToast(msg) {
